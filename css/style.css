@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('../fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSansProSemiBold';
+  src: url('../fonts/SourceSansPro-SemiBold.ttf') format('truetype');
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputs-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inputs-container input {
+  width: calc(100% - 10px);
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#canvas-container {
+  text-align: center;
+  border: 1px dashed #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+#canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loading-spinner {
+  display: none;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-container input {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#heading-input {
+  text-align: center;
+}
+
+.buttons-container button {
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttons-container button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  pointer-events: none;
+  transition: none;
+}
+
+button:disabled:hover {
+  background-color: #ccc;
+  color: #666;
+}
+
+@media screen and (max-width: 600px) {
+  #canvas-container {
+    text-align: center;
+    border: 0;
+    padding: 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+}
