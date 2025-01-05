@@ -18,6 +18,14 @@ document.getElementById('download').addEventListener('click', () => {
   link.click()
 })
 
+document.getElementById('heading-input').addEventListener('input', () => {
+  const canvas = document.getElementById('canvas')
+  const context = canvas.getContext('2d')
+  const headingInput = document.getElementById('heading-input').value.toUpperCase()
+
+  renderEvents(context, canvas, events, background, avLogo, headingInput)
+})
+
 function updateButtonStates() {
   const maxEventsPerPage = 12
   const totalPages = Math.ceil(events.length / maxEventsPerPage)
