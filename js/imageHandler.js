@@ -195,5 +195,3 @@ document.getElementById('prev-page').addEventListener('click', () => {
     updateButtonStates()
   }
 })
-
-
