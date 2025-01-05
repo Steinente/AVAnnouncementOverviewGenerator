@@ -1,6 +1,9 @@
 document.getElementById('from-date').addEventListener('change', checkDates)
 document.getElementById('to-date').addEventListener('change', checkDates)
 
+document.getElementById('from-date').addEventListener('keydown', disableKeyboardInput)
+document.getElementById('to-date').addEventListener('keydown', disableKeyboardInput)
+
 function checkDates() {
   const fromDate = document.getElementById('from-date')
   const toDate = document.getElementById('to-date')
@@ -19,4 +22,8 @@ function checkDates() {
       loadData(fromDate.value, toDate.value)
     }
   }
+}
+
+function disableKeyboardInput(event) {
+  event.preventDefault()
 }
