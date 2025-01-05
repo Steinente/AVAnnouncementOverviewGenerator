@@ -16,7 +16,7 @@ function checkDates() {
       fromDate.style.backgroundColor = ''
       toDate.style.backgroundColor = ''
 
-      // loadData()
+      loadData(fromDate.value, toDate.value)
     }
   }
 }
