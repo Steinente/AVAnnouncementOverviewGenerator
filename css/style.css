@@ -134,6 +134,7 @@ button:disabled {
   cursor: not-allowed;
   pointer-events: none;
   transition: none;
+  user-select: none;
 }
 
 button:disabled:hover {
