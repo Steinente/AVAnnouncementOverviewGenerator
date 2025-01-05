@@ -178,6 +178,7 @@ document.getElementById('next-page').addEventListener('click', () => {
     const canvas = document.getElementById('canvas')
     const context = canvas.getContext('2d')
     const headingInput = document.getElementById('heading-input').value.toUpperCase()
+
     renderEvents(context, canvas, events, background, avLogo, headingInput)
     updateButtonStates()
   }
@@ -189,27 +190,10 @@ document.getElementById('prev-page').addEventListener('click', () => {
     const canvas = document.getElementById('canvas')
     const context = canvas.getContext('2d')
     const headingInput = document.getElementById('heading-input').value.toUpperCase()
+
     renderEvents(context, canvas, events, background, avLogo, headingInput)
     updateButtonStates()
   }
 })
 
-function updateButtonStates() {
-  const maxEventsPerPage = 12
-  const totalPages = Math.ceil(events.length / maxEventsPerPage)
 
-  const prevButton = document.getElementById('prev-page')
-  const nextButton = document.getElementById('next-page')
-
-  if (currentPage === 0) {
-    prevButton.disabled = true
-  } else {
-    prevButton.disabled = false
-  }
-
-  if (currentPage === totalPages - 1) {
-    nextButton.disabled = true
-  } else {
-    nextButton.disabled = false
-  }
-}

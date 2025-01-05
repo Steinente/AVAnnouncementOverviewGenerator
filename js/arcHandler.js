@@ -11,6 +11,7 @@ function loadData(from, to) {
       const parsedData = JSON.parse(data.contents)
       events = parsedData.docs
       setTimeout(generateImage, 500)
+      updateButtonStates()
     })
     .catch(error => {
       console.error('Fehler bei der API-Abfrage:', error)
