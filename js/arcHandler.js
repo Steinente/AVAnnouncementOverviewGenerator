@@ -10,6 +10,7 @@ function loadData(from, to) {
     .then(data => {
       const parsedData = JSON.parse(data.contents)
       events = parsedData.docs
+      currentPage = 0
       setTimeout(generateImage, 500)
       updateButtonStates()
     })
