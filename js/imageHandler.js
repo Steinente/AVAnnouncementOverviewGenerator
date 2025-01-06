@@ -168,30 +168,3 @@ function renderEvents(context, canvas, events, background, avLogo, headingInput)
   context.textAlign = 'center'
   context.fillText(pageText, canvas.width / 2, canvas.height - 190)
 }
-
-document.getElementById('next-page').addEventListener('click', () => {
-  const maxEventsPerPage = 12
-  const totalPages = Math.ceil(events.length / maxEventsPerPage)
-
-  if (currentPage < totalPages - 1) {
-    currentPage++
-    const canvas = document.getElementById('canvas')
-    const context = canvas.getContext('2d')
-    const headingInput = document.getElementById('heading-input').value.toUpperCase()
-
-    renderEvents(context, canvas, events, background, avLogo, headingInput)
-    updateButtonStates()
-  }
-})
-
-document.getElementById('prev-page').addEventListener('click', () => {
-  if (currentPage > 0) {
-    currentPage--
-    const canvas = document.getElementById('canvas')
-    const context = canvas.getContext('2d')
-    const headingInput = document.getElementById('heading-input').value.toUpperCase()
-
-    renderEvents(context, canvas, events, background, avLogo, headingInput)
-    updateButtonStates()
-  }
-})
