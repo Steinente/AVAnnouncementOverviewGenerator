@@ -130,6 +130,13 @@ function renderEvents(context, canvas, events, background, avLogo, headingInput)
 
   for (let i = 0; i < pageEvents.length; i++) {
     const event = pageEvents[i]
+    const eventStartDate = new Date(event.start)
+    const eventStartDateInUTC1 = new Date(eventStartDate.getTime() + 60 * 60 * 1000)
+
+    if (eventStartDateInUTC1.getUTCDate() !== eventStartDate.getUTCDate()) {
+      continue
+    }
+
     const row = Math.floor(i / cols)
     const col = i % cols
 
@@ -142,11 +149,11 @@ function renderEvents(context, canvas, events, background, avLogo, headingInput)
     const timeRange = `${new Date(event.start).toLocaleTimeString('de-DE', {
       hour: '2-digit',
       minute: '2-digit',
-      timeZone: 'UTC',
+      timeZone: 'Europe/Berlin',
     })} - ${new Date(event.end).toLocaleTimeString('de-DE', {
       hour: '2-digit',
       minute: '2-digit',
-      timeZone: 'UTC',
+      timeZone: 'Europe/Berlin',
     })}`
 
     context.textAlign = 'left'
