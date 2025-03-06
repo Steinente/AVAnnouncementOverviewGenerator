@@ -1,7 +1,7 @@
 let events = []
 
 function loadData(from, to) {
-  const backendUrl = `http://2.56.98.170:3000/events?from=${from}&to=${to}`
+  const backendUrl = `https://srv03.brrr.at/events?from=${from}&to=${to}`
 
   fetch(backendUrl)
     .then(response => response.json())
