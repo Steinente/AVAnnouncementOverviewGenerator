@@ -1,15 +1,12 @@
 let events = []
 
 function loadData(from, to) {
-  const apiLink = `https://animalrightscalendar.org/api/events?where[and][0][start][greater_than]=${from}T00:00:00.000Z&where[and][1][start][less_than_equal]=${to}T23:59:59.999Z&where[and][2][tags][contains]=65e93563687054b4060529dd&sort=start&limit=0`
-  const proxyUrl = 'https://api.allorigins.win/get?url='
-  const proxiedApiLink = proxyUrl + encodeURIComponent(apiLink)
+  const backendUrl = `http://2.56.98.170:3000/events?from=${from}&to=${to}`
 
-  fetch(proxiedApiLink)
+  fetch(backendUrl)
     .then(response => response.json())
     .then(data => {
-      const parsedData = JSON.parse(data.contents)
-      events = parsedData.docs
+      events = data
       currentPage = 0
       setTimeout(generateImage, 500)
       updateButtonStates()
